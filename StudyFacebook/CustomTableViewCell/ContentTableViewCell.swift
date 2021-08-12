@@ -2,16 +2,16 @@
 //  ContentTableViewCell.swift
 //  StudyFacebook
 //
-//  Created by 탁제원 on 2021/08/09.
+//  Created by 탁제원 on 2021/08/12.
 //
 
 import UIKit
 
 class ContentTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var functionLabel: UILabel!
-    @IBOutlet weak var functionImageView: UIImageView!
-    
+    @IBOutlet weak var contentImage: UIImageView!
+    @IBOutlet weak var contentLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +22,5 @@ class ContentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

@@ -11,6 +11,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     
     // MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
+    
     let contentCellIdentifier: String = "contentCell"
     let profileCellIdentifier: String = "profileCell"
     
@@ -73,27 +74,27 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
             profileCell.introduceLable?.text = "IOS 개발자 탁제원입니다."
             return profileCell
         case 1:
-            contentCell.functionImageView.image = UIImage(named: menuImages[indexPath.row])
-            contentCell.functionLabel?.text = menuList[indexPath.row]
+            contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
+            contentCell.contentLabel?.text = menuList[indexPath.row]
             return contentCell
         case 2:
-            contentCell.functionImageView.image = nil
-            contentCell.functionLabel?.text = favoritesList[indexPath.row]
+            contentCell.contentImage.image = nil
+            contentCell.contentLabel?.text = favoritesList[indexPath.row]
             return contentCell
         case 3:
-            contentCell.functionImageView.image = UIImage(named: supportImages[indexPath.row])
-            contentCell.functionLabel?.text = supportList[indexPath.row]
+            contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
+            contentCell.contentLabel?.text = supportList[indexPath.row]
             return contentCell
         default:
-//            cell.functionImageView.image = nil
-            contentCell.functionLabel?.text = "default"
+            contentCell.contentImage.image = nil
+            contentCell.contentLabel?.text = "default"
             return contentCell
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 100.0 : 50.0
+        return indexPath.section == 0 ? 100.0 : 60.0
     }
     
     
