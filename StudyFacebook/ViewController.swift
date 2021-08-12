@@ -17,7 +17,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     
     let profile: [String] = ["profile"]
     let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games"]
-    let menuImages: [String] = ["fb_freinds", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games"]
+    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games"]
     let favoritesList: [String] = ["muck bang", "k-pop"]
     let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
     let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
