@@ -20,7 +20,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     let profile: [String] = ["profile"]
     let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games", "See More..."]
     let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games", ""]
-    let favoritesList: [String] = ["muck bang", "k-pop"]
+    let favoritesList: [String] = ["muck bang", "k-pop", "Add Favorites..."]
     let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
     let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
 
@@ -98,17 +98,21 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
                 return contentCell
             }
         case 2:
-            contentCell.contentImage.image = nil
-            contentCell.contentLabel?.text = favoritesList[indexPath.row]
-            return contentCell
+            if indexPath.row == favoritesList.count {
+                moreInformationCell.moreInformationButton.titleLabel?.text = favoritesList[indexPath.row]
+                return moreInformationCell
+            } else {
+                contentCell.contentLabel?.text = favoritesList[indexPath.row]
+                return contentCell
+            }
         case 3:
-            contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
-            contentCell.contentLabel?.text = supportList[indexPath.row]
-            return contentCell
+                contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
+                contentCell.contentLabel?.text = supportList[indexPath.row]
+                return contentCell
         case 4:
             return logOutCell
         default:
-            contentCell.contentImage.image = nil
+//            contentCell.contentImage.image = nil
             contentCell.contentLabel?.text = "default"
             return contentCell
         }
