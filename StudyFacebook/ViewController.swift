@@ -14,10 +14,12 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     
     let contentCellIdentifier: String = "contentCell"
     let profileCellIdentifier: String = "profileCell"
+    let logOutCellIdentifier: String = "logOutCell"
+    let moreInformationCellIdentifier: String = "moreInformationCell"
     
     let profile: [String] = ["profile"]
-    let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games"]
-    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games"]
+    let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games", "See More..."]
+    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games", ""]
     let favoritesList: [String] = ["muck bang", "k-pop"]
     let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
     let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
@@ -30,7 +32,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK:- TableView methods
     // MARK: sections methods
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +46,8 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
             return favoritesList.count
         case 3:
             return supportList.count
+        case 4:
+            return 1
         default:
             return 0
         }
@@ -60,9 +64,19 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: Cell methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.contentCellIdentifier) as? ContentTableViewCell else { return UITableViewCell() }
+        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.contentCellIdentifier) as? ContentTableViewCell else {
+            return UITableViewCell()
+        }
         
         guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? ProfileTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.logOutCellIdentifier) as? LogOutTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        guard let moreInformationCell: MoreInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.moreInformationCellIdentifier) as? MoreInformationTableViewCell else {
             return UITableViewCell()
         }
         
@@ -74,9 +88,15 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
             profileCell.introduceLable?.text = "IOS 개발자 탁제원입니다."
             return profileCell
         case 1:
-            contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
-            contentCell.contentLabel?.text = menuList[indexPath.row]
-            return contentCell
+            if indexPath.row == menuList.count {
+                moreInformationCell.moreInformationButton.titleLabel?.text = menuList[indexPath.row]
+                moreInformationCell.moreInformationButton.titleLabel?.tintColor = .systemRed
+                return moreInformationCell
+            } else {
+                contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
+                contentCell.contentLabel?.text = menuList[indexPath.row]
+                return contentCell
+            }
         case 2:
             contentCell.contentImage.image = nil
             contentCell.contentLabel?.text = favoritesList[indexPath.row]
@@ -85,6 +105,8 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
             contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
             contentCell.contentLabel?.text = supportList[indexPath.row]
             return contentCell
+        case 4:
+            return logOutCell
         default:
             contentCell.contentImage.image = nil
             contentCell.contentLabel?.text = "default"
@@ -94,7 +116,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 100.0 : 60.0
+        return indexPath.section == 0 ? 90.0 : 55.0
     }
     
     

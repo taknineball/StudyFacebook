@@ -13,6 +13,8 @@
 		3822DD3F26C123B000910DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3822DD3D26C123B000910DC1 /* Main.storyboard */; };
 		3822DD4126C123B200910DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3822DD4026C123B200910DC1 /* Assets.xcassets */; };
 		3822DD4426C123B200910DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3822DD4226C123B200910DC1 /* LaunchScreen.storyboard */; };
+		382A4E5526C64FC500E63FB9 /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */; };
+		382A4E5726C6564700E63FB9 /* MoreInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A4E5626C6564700E63FB9 /* MoreInformationTableViewCell.swift */; };
 		38A5215226C526820089FAFA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5215126C526820089FAFA /* ProfileTableViewCell.swift */; };
 		38A5215426C545530089FAFA /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5215326C545530089FAFA /* ContentTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		3822DD4026C123B200910DC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3822DD4326C123B200910DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3822DD4526C123B200910DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCell.swift; sourceTree = "<group>"; };
+		382A4E5626C6564700E63FB9 /* MoreInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationTableViewCell.swift; sourceTree = "<group>"; };
 		38A5215126C526820089FAFA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		38A5215326C545530089FAFA /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,8 @@
 			children = (
 				38A5215126C526820089FAFA /* ProfileTableViewCell.swift */,
 				38A5215326C545530089FAFA /* ContentTableViewCell.swift */,
+				382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */,
+				382A4E5626C6564700E63FB9 /* MoreInformationTableViewCell.swift */,
 			);
 			path = CustomTableViewCell;
 			sourceTree = "<group>";
@@ -154,7 +160,9 @@
 				3822DD3C26C123B000910DC1 /* ViewController.swift in Sources */,
 				3822DD3826C123B000910DC1 /* AppDelegate.swift in Sources */,
 				3822DD3A26C123B000910DC1 /* SceneDelegate.swift in Sources */,
+				382A4E5526C64FC500E63FB9 /* LogOutTableViewCell.swift in Sources */,
 				38A5215226C526820089FAFA /* ProfileTableViewCell.swift in Sources */,
+				382A4E5726C6564700E63FB9 /* MoreInformationTableViewCell.swift in Sources */,
 				38A5215426C545530089FAFA /* ContentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
