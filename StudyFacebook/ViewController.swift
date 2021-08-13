@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class ViewController: UIViewController{
     
     // MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +29,11 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
     }
 
+}
+
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
     // MARK:- TableView methods
     // MARK: sections methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,10 +80,7 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
         guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.logOutCellIdentifier) as? LogOutTableViewCell else {
             return UITableViewCell()
         }
-        
-        guard let moreInformationCell: MoreInformationTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.moreInformationCellIdentifier) as? MoreInformationTableViewCell else {
-            return UITableViewCell()
-        }
+
         
         switch indexPath.section{
         case 0:
@@ -88,23 +90,24 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
             profileCell.introduceLable?.text = "IOS 개발자 탁제원입니다."
             return profileCell
         case 1:
-            if indexPath.row == menuList.count {
-                moreInformationCell.moreInformationButton.titleLabel?.text = menuList[indexPath.row]
-                moreInformationCell.moreInformationButton.titleLabel?.tintColor = .systemRed
-                return moreInformationCell
+            if indexPath.row == menuList.count - 1 {
+                contentCell.contentLabel?.text = menuList[indexPath.row]
+                contentCell.contentLabel.textColor = UIColor(red: 66, green: 103, blue: 178, alpha: 1.0)
+                contentCell.accessoryType = .none
             } else {
                 contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
                 contentCell.contentLabel?.text = menuList[indexPath.row]
-                return contentCell
             }
+            return contentCell
         case 2:
-            if indexPath.row == favoritesList.count {
-                moreInformationCell.moreInformationButton.titleLabel?.text = favoritesList[indexPath.row]
-                return moreInformationCell
+            if indexPath.row == favoritesList.count - 1 {
+                contentCell.contentLabel?.text = favoritesList[indexPath.row]
+                contentCell.contentLabel.textColor = UIColor(red: 66, green: 103, blue: 178, alpha: 1.0)
+                contentCell.accessoryType = .none
             } else {
                 contentCell.contentLabel?.text = favoritesList[indexPath.row]
-                return contentCell
             }
+            return contentCell
         case 3:
                 contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
                 contentCell.contentLabel?.text = supportList[indexPath.row]
@@ -112,17 +115,15 @@ final class ViewController: UIViewController, UITableViewDataSource, UITableView
         case 4:
             return logOutCell
         default:
-//            contentCell.contentImage.image = nil
             contentCell.contentLabel?.text = "default"
             return contentCell
         }
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 90.0 : 55.0
-    }
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return indexPath.section == 0 ? 90.0 : 50.0
+//    }
     
 }
 
