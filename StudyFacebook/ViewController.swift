@@ -16,6 +16,7 @@ final class ViewController: UIViewController{
     let profileCellIdentifier: String = "profileCell"
     let logOutCellIdentifier: String = "logOutCell"
     let moreInformationCellIdentifier: String = "moreInformationCell"
+    let facebookColor: UIColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
     
     let profile: [String] = ["profile"]
     let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games", "See More..."]
@@ -92,7 +93,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             if indexPath.row == menuList.count - 1 {
                 contentCell.contentLabel?.text = menuList[indexPath.row]
-                contentCell.contentLabel.textColor = UIColor(red: 66, green: 103, blue: 178, alpha: 1.0)
+                contentCell.contentLabel.textColor = facebookColor
                 contentCell.accessoryType = .none
             } else {
                 contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
@@ -102,7 +103,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             if indexPath.row == favoritesList.count - 1 {
                 contentCell.contentLabel?.text = favoritesList[indexPath.row]
-                contentCell.contentLabel.textColor = UIColor(red: 66, green: 103, blue: 178, alpha: 1.0)
+                contentCell.contentLabel.textColor = facebookColor
                 contentCell.accessoryType = .none
             } else {
                 contentCell.contentLabel?.text = favoritesList[indexPath.row]

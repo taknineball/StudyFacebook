@@ -65,7 +65,6 @@
                                             <outlet property="introduceLable" destination="5d5-Rn-6Os" id="csI-OV-34Z"/>
                                             <outlet property="nameLabel" destination="Nq2-qP-Zt0" id="x2m-1D-bMF"/>
                                             <outlet property="profileImage" destination="UHd-tW-gv1" id="k5A-wJ-Q7s"/>
-                                            <segue destination="xO4-E1-EIO" kind="show" id="aS4-dV-yyG"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contentCell" rowHeight="69" id="sfP-bn-nvo" customClass="ContentTableViewCell" customModule="StudyFacebook" customModuleProvider="target">
@@ -102,7 +101,6 @@
                                         <connections>
                                             <outlet property="contentImage" destination="y59-fh-tDs" id="hps-KE-xY5"/>
                                             <outlet property="contentLabel" destination="8eK-nI-ElP" id="nlz-oF-xtZ"/>
-                                            <segue destination="xO4-E1-EIO" kind="show" id="Ubx-23-385"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="logOutCell" id="7Xl-LR-j10" customClass="LogOutTableViewCell" customModule="StudyFacebook" customModuleProvider="target">
@@ -153,22 +151,6 @@
             </objects>
             <point key="canvasLocation" x="976.92307692307691" y="92.417061611374407"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="frT-Se-phd">
-            <objects>
-                <viewController id="xO4-E1-EIO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qfs-tX-mgv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8sH-kX-776"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="k7T-lR-jJ2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPX-QX-aTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1903" y="102"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Mb-dl-zxS">
             <objects>
@@ -190,9 +172,6 @@
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ubx-23-385"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bayMax" width="73.666664123535156" height="76"/>
         <systemColor name="systemBackgroundColor">
