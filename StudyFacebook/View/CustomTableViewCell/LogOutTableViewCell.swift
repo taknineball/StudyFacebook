@@ -9,7 +9,7 @@ import UIKit
 
 class LogOutTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var logOutLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

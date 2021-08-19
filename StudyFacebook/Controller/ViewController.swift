@@ -24,11 +24,16 @@ final class ViewController: UIViewController{
     let favoritesList: [String] = ["muck bang", "k-pop", "Add Favorites..."]
     let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
     let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
+    
+    private var numberOfRows: [Int] = []
 
     // MARK:- View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+         numberOfRows = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
     }
+    
+    
 
 }
 
@@ -43,7 +48,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let numberOfRows: [Int] = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
+//        let numberOfRows: [Int] = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
         
         return numberOfRows[section]
     }

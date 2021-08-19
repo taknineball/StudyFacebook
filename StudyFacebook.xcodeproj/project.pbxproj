@@ -47,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				3822DD3626C123B000910DC1 /* StudyFacebook */,
+				3822DD4226C123B200910DC1 /* LaunchScreen.storyboard */,
 				3822DD3526C123B000910DC1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,14 +63,12 @@
 		3822DD3626C123B000910DC1 /* StudyFacebook */ = {
 			isa = PBXGroup;
 			children = (
-				3822DD4B26C1282600910DC1 /* CustomTableViewCell */,
+				3822DD4526C123B200910DC1 /* Info.plist */,
 				3822DD3726C123B000910DC1 /* AppDelegate.swift */,
 				3822DD3926C123B000910DC1 /* SceneDelegate.swift */,
-				3822DD3B26C123B000910DC1 /* ViewController.swift */,
-				3822DD3D26C123B000910DC1 /* Main.storyboard */,
-				3822DD4026C123B200910DC1 /* Assets.xcassets */,
-				3822DD4226C123B200910DC1 /* LaunchScreen.storyboard */,
-				3822DD4526C123B200910DC1 /* Info.plist */,
+				3843B23E26CE6E17001C6251 /* Controller */,
+				3843B23C26CE6DB0001C6251 /* Model */,
+				3843B23F26CE6E1F001C6251 /* View */,
 			);
 			path = StudyFacebook;
 			sourceTree = "<group>";
@@ -82,6 +81,31 @@
 				382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */,
 			);
 			path = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		3843B23C26CE6DB0001C6251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3822DD4026C123B200910DC1 /* Assets.xcassets */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3843B23E26CE6E17001C6251 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3822DD3B26C123B000910DC1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3843B23F26CE6E1F001C6251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3822DD3D26C123B000910DC1 /* Main.storyboard */,
+				3822DD4B26C1282600910DC1 /* CustomTableViewCell */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
