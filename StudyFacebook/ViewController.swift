@@ -43,20 +43,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch section{
-        case 0:
-            return profile.count
-        case 1:
-            return menuList.count
-        case 2:
-            return favoritesList.count
-        case 3:
-            return supportList.count
-        case 4:
-            return 1
-        default:
-            return 0
-        }
+        let numberOfRows: [Int] = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
+        
+        return numberOfRows[section]
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
