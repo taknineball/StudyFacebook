@@ -14,7 +14,10 @@
 		3822DD4126C123B200910DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3822DD4026C123B200910DC1 /* Assets.xcassets */; };
 		3822DD4426C123B200910DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3822DD4226C123B200910DC1 /* LaunchScreen.storyboard */; };
 		382A4E5526C64FC500E63FB9 /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */; };
-		38A5215226C526820089FAFA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5215126C526820089FAFA /* ProfileTableViewCell.swift */; };
+		389E494226D3D78D00971E1D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E494126D3D78D00971E1D /* Keys.swift */; };
+		389E494426D3D9D300971E1D /* Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E494326D3D9D300971E1D /* Specs.swift */; };
+		389E494626D3DB9600971E1D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389E494526D3DB9600971E1D /* UserProfile.swift */; };
+		38A5215226C526820089FAFA /* FacebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5215126C526820089FAFA /* FacebookTableViewCell.swift */; };
 		38A5215426C545530089FAFA /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5215326C545530089FAFA /* ContentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +31,10 @@
 		3822DD4326C123B200910DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3822DD4526C123B200910DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCell.swift; sourceTree = "<group>"; };
-		38A5215126C526820089FAFA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		389E494126D3D78D00971E1D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		389E494326D3D9D300971E1D /* Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specs.swift; sourceTree = "<group>"; };
+		389E494526D3DB9600971E1D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		38A5215126C526820089FAFA /* FacebookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookTableViewCell.swift; sourceTree = "<group>"; };
 		38A5215326C545530089FAFA /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +82,7 @@
 		3822DD4B26C1282600910DC1 /* CustomTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				38A5215126C526820089FAFA /* ProfileTableViewCell.swift */,
+				38A5215126C526820089FAFA /* FacebookTableViewCell.swift */,
 				38A5215326C545530089FAFA /* ContentTableViewCell.swift */,
 				382A4E5426C64FC500E63FB9 /* LogOutTableViewCell.swift */,
 			);
@@ -87,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				3822DD4026C123B200910DC1 /* Assets.xcassets */,
+				389E494126D3D78D00971E1D /* Keys.swift */,
+				389E494326D3D9D300971E1D /* Specs.swift */,
+				389E494526D3DB9600971E1D /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +191,11 @@
 				3822DD3826C123B000910DC1 /* AppDelegate.swift in Sources */,
 				3822DD3A26C123B000910DC1 /* SceneDelegate.swift in Sources */,
 				382A4E5526C64FC500E63FB9 /* LogOutTableViewCell.swift in Sources */,
-				38A5215226C526820089FAFA /* ProfileTableViewCell.swift in Sources */,
+				389E494426D3D9D300971E1D /* Specs.swift in Sources */,
+				389E494226D3D78D00971E1D /* Keys.swift in Sources */,
+				38A5215226C526820089FAFA /* FacebookTableViewCell.swift in Sources */,
 				38A5215426C545530089FAFA /* ContentTableViewCell.swift in Sources */,
+				389E494626D3DB9600971E1D /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

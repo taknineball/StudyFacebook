@@ -16,14 +16,14 @@ final class ViewController: UIViewController{
     let profileCellIdentifier: String = "profileCell"
     let logOutCellIdentifier: String = "logOutCell"
     let moreInformationCellIdentifier: String = "moreInformationCell"
-    let facebookColor: UIColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
+//    let facebookColor: UIColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
     
     let profile: [String] = ["profile"]
     let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games", "See More..."]
-    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games", ""]
+//    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games", ""]
     let favoritesList: [String] = ["muck bang", "k-pop", "Add Favorites..."]
     let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
-    let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
+//    let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
     
     private var numberOfRows: [Int] = []
 
@@ -68,7 +68,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? ProfileTableViewCell else {
+        guard let profileCell: FacebookTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? FacebookTableViewCell else {
             return UITableViewCell()
         }
         
