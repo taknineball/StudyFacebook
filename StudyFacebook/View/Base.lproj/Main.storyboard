@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="separatorColor" systemColor="systemGray5Color"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="101" id="jbh-Wg-cYq" customClass="FacebookTableViewCell" customModule="StudyFacebook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="101" id="jbh-Wg-cYq" customClass="ProfileTableViewCell" customModule="StudyFacebook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="390" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jbh-Wg-cYq" id="QDr-mt-ojC">
@@ -62,9 +62,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="introduceLable" destination="5d5-Rn-6Os" id="csI-OV-34Z"/>
-                                            <outlet property="nameLabel" destination="Nq2-qP-Zt0" id="x2m-1D-bMF"/>
-                                            <outlet property="profileImage" destination="UHd-tW-gv1" id="k5A-wJ-Q7s"/>
+                                            <outlet property="userDescription" destination="5d5-Rn-6Os" id="TU0-vE-AUm"/>
+                                            <outlet property="userImage" destination="UHd-tW-gv1" id="Rnp-8V-88K"/>
+                                            <outlet property="userName" destination="Nq2-qP-Zt0" id="O1Y-vD-nuk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contentCell" rowHeight="69" id="sfP-bn-nvo" customClass="ContentTableViewCell" customModule="StudyFacebook" customModuleProvider="target">

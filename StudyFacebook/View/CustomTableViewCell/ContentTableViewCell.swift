@@ -11,16 +11,23 @@ class ContentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    public func setMenuContentCell(with info: CellInformations, indexPath: Int) {
+        contentImage.image = info.menuCellInformation[indexPath].contentImage
+        contentLabel.text = info.menuCellInformation[indexPath].contentTitle
+        contentLabel.textColor = info.menuCellInformation[indexPath].contentTitleColor
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    public func setFavoritesContentCell(with info: CellInformations, indexPath: Int) {
+        contentImage.image = info.favoritesCellInformation[indexPath].contentImage
+        contentLabel.text = info.favoritesCellInformation[indexPath].contentTitle
+        contentLabel.textColor = info.favoritesCellInformation[indexPath].contentTitleColor
+    }
+    
+    public func setSupportContentCell(with info: CellInformations, indexPath: Int) {
+        contentImage.image = info.supportCellInformation[indexPath].contentImage
+        contentLabel.text = info.supportCellInformation[indexPath].contentTitle
+        contentLabel.textColor = info.supportCellInformation[indexPath].contentTitleColor
     }
 
 }

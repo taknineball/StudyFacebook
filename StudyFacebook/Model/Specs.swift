@@ -9,13 +9,20 @@ import UIKit
 
 public struct FacebookSpecs {
     
-    public struct Colors{
-        let facebookColor: UIColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
+    struct Colors{
+        let facebookColor: UIColor
         let red: UIColor = UIColor.red
         let black: UIColor = UIColor.black
+        
+        init(){
+            self.facebookColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
+//            self.red = colorName
+//            self.black = colorName
+        }
     }
     
-    public struct ImageName {
+    
+    struct ImageName {
         let friends: String = "fb_friends"
         let events: String = "fb_events"
         let groups: String = "fb_groups"
@@ -24,6 +31,6 @@ public struct FacebookSpecs {
         let games: String = "fb_games"
         let settings: String = "fb_settings"
         let privacy: String = "fb_privacy_shortcuts"
-        let helpAndSupport: String = "fb_help_and_support"        
+        let helpAndSupport: String = "fb_help_and_support"
     }
 }

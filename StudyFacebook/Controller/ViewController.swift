@@ -12,25 +12,20 @@ final class ViewController: UIViewController{
     // MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
     
+    var user = UserInformation.init(userName: "탁제원", imageName: "bayMax", introduction: "ios 개발자 입니다")
+    let cellInformation = CellInformations()
+    let facebookColor = FacebookSpecs.Colors().facebookColor
+    
     let contentCellIdentifier: String = "contentCell"
     let profileCellIdentifier: String = "profileCell"
     let logOutCellIdentifier: String = "logOutCell"
     let moreInformationCellIdentifier: String = "moreInformationCell"
-//    let facebookColor: UIColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
-    
-    let profile: [String] = ["profile"]
-    let menuList: [String] = ["Friends", "Events", "Groups", "CNU", "Town Hall", "Instant Games", "See More..."]
-//    let menuImages: [String] = ["fb_friends", "fb_events", "fb_groups", "fb_education", "fb_town_hall", "fb_games", ""]
-    let favoritesList: [String] = ["muck bang", "k-pop", "Add Favorites..."]
-    let supportList: [String] = ["Settings", "Privarcy Shortcuts", "Help and Supprot"]
-//    let supportImages: [String] = ["fb_settings", "fb_privacy_shortcuts", "fb_help_and_support"]
     
     private var numberOfRows: [Int] = []
 
     // MARK:- View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-         numberOfRows = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
     }
     
     
@@ -48,7 +43,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        let numberOfRows: [Int] = [profile.count, menuList.count, favoritesList.count, supportList.count, 1]
+        let numberOfRows: [Int] = [1, cellInformation.menuCellInformation.count, cellInformation.favoritesCellInformation.count, cellInformation.supportCellInformation.count, 1]
         
         return numberOfRows[section]
     }
@@ -68,7 +63,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        guard let profileCell: FacebookTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? FacebookTableViewCell else {
+        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? ProfileTableViewCell else {
             return UITableViewCell()
         }
         
@@ -79,34 +74,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.section{
         case 0:
-            let bayMaxImage: UIImage! = UIImage(named: "bayMax")
-            profileCell.profileImage.image = bayMaxImage
-            profileCell.nameLabel?.text = "탁제원"
-            profileCell.introduceLable?.text = "IOS 개발자 탁제원입니다."
+            profileCell.setProfileCellData(with: user)
             return profileCell
         case 1:
-            if indexPath.row == menuList.count - 1 {
-                contentCell.contentLabel?.text = menuList[indexPath.row]
-                contentCell.contentLabel.textColor = facebookColor
-                contentCell.accessoryType = .none
-            } else {
-                contentCell.contentImage.image = UIImage(named: menuImages[indexPath.row])
-                contentCell.contentLabel?.text = menuList[indexPath.row]
-            }
+            contentCell.setMenuContentCell(with: cellInformation, indexPath: indexPath.row)
             return contentCell
         case 2:
-            if indexPath.row == favoritesList.count - 1 {
-                contentCell.contentLabel?.text = favoritesList[indexPath.row]
-                contentCell.contentLabel.textColor = facebookColor
-                contentCell.accessoryType = .none
-            } else {
-                contentCell.contentLabel?.text = favoritesList[indexPath.row]
-            }
+            contentCell.setFavoritesContentCell(with: cellInformation, indexPath: indexPath.row)
             return contentCell
         case 3:
-                contentCell.contentImage.image = UIImage(named: supportImages[indexPath.row])
-                contentCell.contentLabel?.text = supportList[indexPath.row]
-                return contentCell
+            contentCell.setSupportContentCell(with: cellInformation, indexPath: indexPath.row)
+            return contentCell
         case 4:
             return logOutCell
         default:
