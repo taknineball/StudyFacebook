@@ -12,16 +12,15 @@ final class ViewController: UIViewController{
     // MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
     
-    var user = UserInformation.init(userName: "탁제원", imageName: "bayMax", introduction: "ios 개발자 입니다")
+    private var user = UserInformation.init(userName: "탁제원", imageName: "bayMax", introduction: "ios 개발자 입니다")
     let cellInformation = CellInformations()
     let facebookColor = FacebookSpecs.Colors().facebookColor
+    let sectionInformation = sectionInformations()
     
-    let contentCellIdentifier: String = "contentCell"
-    let profileCellIdentifier: String = "profileCell"
-    let logOutCellIdentifier: String = "logOutCell"
-    let moreInformationCellIdentifier: String = "moreInformationCell"
-    
-    private var numberOfRows: [Int] = []
+    let contentCell = ContentTableViewCell()
+    let profileCell = ProfileTableViewCell()
+    let logOutCell = LogOutTableViewCell()
+
 
     // MARK:- View Methods
     override func viewDidLoad() {
@@ -38,36 +37,33 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK:- TableView methods
     // MARK: sections methods
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return sectionInformation.numbersOfRowInSection.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let numberOfRows: [Int] = [1, cellInformation.menuCellInformation.count, cellInformation.favoritesCellInformation.count, cellInformation.supportCellInformation.count, 1]
-        
-        return numberOfRows[section]
+        return sectionInformation.numbersOfRowInSection[section]
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 2 ? "FAVORITES" : " "
+        return sectionInformation.titleOfSections[section]
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 2 ? 60.0 : 30.0
+        return sectionInformation.sizeOfSections[section]
     }
     
     // MARK: Cell methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.contentCellIdentifier) as? ContentTableViewCell else {
+        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: contentCell.contentCellIdentifier) as? ContentTableViewCell else {
             return UITableViewCell()
         }
         
-        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.profileCellIdentifier) as? ProfileTableViewCell else {
+        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: profileCell.profileCellIdentifier) as? ProfileTableViewCell else {
             return UITableViewCell()
         }
         
-        guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.logOutCellIdentifier) as? LogOutTableViewCell else {
+        guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: logOutCell.logOutCellIdentifier) as? LogOutTableViewCell else {
             return UITableViewCell()
         }
 
@@ -77,13 +73,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             profileCell.setProfileCellData(with: user)
             return profileCell
         case 1:
-            contentCell.setMenuContentCell(with: cellInformation, indexPath: indexPath.row)
+            contentCell.setMenuContentCell(with: cellInformation, indexPath: indexPath.row, cellName: contentCell)
             return contentCell
         case 2:
-            contentCell.setFavoritesContentCell(with: cellInformation, indexPath: indexPath.row)
+            contentCell.setFavoritesContentCell(with: cellInformation, indexPath: indexPath.row, cellName: contentCell)
             return contentCell
         case 3:
-            contentCell.setSupportContentCell(with: cellInformation, indexPath: indexPath.row)
+            contentCell.setSupportContentCell(with: cellInformation, indexPath: indexPath.row, cellName: contentCell)
             return contentCell
         case 4:
             return logOutCell

@@ -11,8 +11,8 @@ public struct FacebookSpecs {
     
     struct Colors{
         let facebookColor: UIColor
-        let red: UIColor = UIColor.red
-        let black: UIColor = UIColor.black
+//        let red: UIColor = UIColor.red
+//        let black: UIColor = UIColor.black
         
         init(){
             self.facebookColor = UIColor(red: (66/255.0), green: (103/255.0), blue: (178/255.0), alpha: 1.0)
