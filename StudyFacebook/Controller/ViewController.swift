@@ -7,11 +7,10 @@
 
 import UIKit
 
-final class ViewController: UIViewController{
+final class ViewController: UIViewController {
     
     // MARK:- Properties
-    @IBOutlet weak var tableView: UITableView!
-    let tableViewforCode: UITableView = UITableView()
+    let tableViewforCode: UITableView = UITableView(frame: .zero, style: .grouped)
     
     private var user = UserInformation.init(userName: "탁제원", imageName: "bayMax", introduction: "ios 개발자 입니다")
     let cellInformation = CellInformations()
@@ -27,15 +26,26 @@ final class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        settings()
+        registers()
     }
     
     private func settings() {
         
         view.addSubview(tableViewforCode)
+        tableViewforCode.delegate = self
+        tableViewforCode.dataSource = self
+        
+        //tableView size
+        tableViewforCode.frame = view.bounds //(0,0)
     }
     
-    
+    private func registers() {
+        
+        tableViewforCode.register(ProfileTableViewCell.self, forCellReuseIdentifier: "profileCell")
+        tableViewforCode.register(ContentTableViewCell.self, forCellReuseIdentifier: "contentCell")
+        tableViewforCode.register(LogOutTableViewCell.self, forCellReuseIdentifier: "logOutCell")
+    }
 
 }
 
@@ -90,17 +100,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             contentCell.setSupportContentCell(with: cellInformation, indexPath: indexPath.row, cellName: contentCell)
             return contentCell
         case 4:
+            logOutCell.setLogOutCell(with: cellInformation, indexPath: indexPath.row, cellName: logOutCell)
             return logOutCell
         default:
-            contentCell.contentLabel?.text = "default"
             return contentCell
         }
         
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return indexPath.section == 0 ? 90.0 : 50.0
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ? 90.0 : 50.0
+    }
     
 }
 

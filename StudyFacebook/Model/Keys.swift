@@ -54,6 +54,8 @@ public struct CellInformations {
         Keys(imageName: "fb_help_and_support", title: "Help and Supprot", color: .black, accessory: .disclosureIndicator)
     ]
     
+    let logOutCellInformation: Keys = Keys(imageName: "", title: "Log Out", color: .red, accessory: .none)
+    
 }
 
 public struct sectionInformations {

@@ -9,19 +9,30 @@ import UIKit
 
 class LogOutTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var logOutLabel: UILabel!
+    let logOutLabel: UILabel = UILabel()
     
     let logOutCellIdentifier: String = "logOutCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private func cellSettings() {
+        addSubview(logOutLabel)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    private func cellConfigure() {
+        logOutLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            logOutLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            logOutLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+    }
+    
+    public func setLogOutCell(with info: CellInformations, indexPath: Int, cellName: LogOutTableViewCell) {
+        logOutLabel.text = info.logOutCellInformation.contentTitle
+        logOutLabel.textColor = info.logOutCellInformation.contentTitleColor
+        cellName.accessoryType = info.logOutCellInformation.contentAccessory
+        
+        cellSettings()
+        cellConfigure()
     }
 
 }
