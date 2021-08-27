@@ -11,6 +11,7 @@ final class ViewController: UIViewController{
     
     // MARK:- Properties
     @IBOutlet weak var tableView: UITableView!
+    let tableViewforCode: UITableView = UITableView()
     
     private var user = UserInformation.init(userName: "탁제원", imageName: "bayMax", introduction: "ios 개발자 입니다")
     let cellInformation = CellInformations()
@@ -25,6 +26,13 @@ final class ViewController: UIViewController{
     // MARK:- View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    
+    private func settings() {
+        
+        view.addSubview(tableViewforCode)
     }
     
     
