@@ -26,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
+//        navigationController.navigationBar.barTintColor = FacebookSpecs.Colors().facebookColor
+//        navigationController.title = "Facebook"
         window?.makeKeyAndVisible()
         
     }
