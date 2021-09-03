@@ -9,8 +9,6 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
     
-    let profileCellIdentifier: String = "profileCell"
-    
     let userImage: UIImageView = UIImageView()
     let userName: UILabel = UILabel()
     let userDescription: UILabel = UILabel()

@@ -12,9 +12,6 @@ class ContentTableViewCell: UITableViewCell {
     let contentImage: UIImageView = UIImageView()
     let contentLabel: UILabel = UILabel()
     
-    let contentCellIdentifier: String = "contentCell"
-    
-    
     private func cellSettings() {
         addSubview(contentImage)
         addSubview(contentLabel)

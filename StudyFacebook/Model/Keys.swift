@@ -83,4 +83,18 @@ public struct sectionInformations {
         30.0,
         30.0
     ]
+    
+    let sizeOfRows: [CGFloat] = [
+        90.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+    ]
+}
+
+public enum CellIdentifier {
+    static let profileCellIdentifier = "profileCell"
+    static let contentCellIdentifier = "contentCell"
+    static let logOutCellIdentifier = "logOutCell"
 }

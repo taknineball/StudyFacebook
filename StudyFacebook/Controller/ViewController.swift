@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController{
     
     // MARK:- Properties
     let tableViewforCode: UITableView = UITableView(frame: .zero, style: .grouped)
@@ -38,13 +38,17 @@ final class ViewController: UIViewController {
         
         //tableView size
         tableViewforCode.frame = view.bounds //(0,0)
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "Facebook"
+        self.navigationController?.navigationBar.barTintColor = facebookColor
     }
     
     private func registers() {
         
-        tableViewforCode.register(ProfileTableViewCell.self, forCellReuseIdentifier: "profileCell")
-        tableViewforCode.register(ContentTableViewCell.self, forCellReuseIdentifier: "contentCell")
-        tableViewforCode.register(LogOutTableViewCell.self, forCellReuseIdentifier: "logOutCell")
+        tableViewforCode.register(ProfileTableViewCell.self, forCellReuseIdentifier: CellIdentifier.profileCellIdentifier )
+        tableViewforCode.register(ContentTableViewCell.self, forCellReuseIdentifier: CellIdentifier.contentCellIdentifier)
+        tableViewforCode.register(LogOutTableViewCell.self, forCellReuseIdentifier: CellIdentifier.logOutCellIdentifier)
     }
 
 }
@@ -73,15 +77,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: Cell methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: contentCell.contentCellIdentifier) as? ContentTableViewCell else {
+        guard let contentCell: ContentTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.contentCellIdentifier) as? ContentTableViewCell else {
             return UITableViewCell()
         }
         
-        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: profileCell.profileCellIdentifier) as? ProfileTableViewCell else {
+        guard let profileCell: ProfileTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.profileCellIdentifier) as? ProfileTableViewCell else {
             return UITableViewCell()
         }
         
-        guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: logOutCell.logOutCellIdentifier) as? LogOutTableViewCell else {
+        guard let logOutCell: LogOutTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.logOutCellIdentifier) as? LogOutTableViewCell else {
             return UITableViewCell()
         }
 
@@ -109,7 +113,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 90.0 : 50.0
+        return sectionInformation.sizeOfRows[indexPath.section]
     }
     
 }

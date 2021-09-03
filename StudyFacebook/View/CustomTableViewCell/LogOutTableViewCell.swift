@@ -10,8 +10,6 @@ import UIKit
 class LogOutTableViewCell: UITableViewCell {
     
     let logOutLabel: UILabel = UILabel()
-    
-    let logOutCellIdentifier: String = "logOutCell"
 
     private func cellSettings() {
         addSubview(logOutLabel)
